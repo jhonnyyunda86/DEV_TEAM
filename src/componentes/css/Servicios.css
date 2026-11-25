@@ -1,0 +1,102 @@
+.servicios-section {
+  padding: 80px 0 70px;
+  position: relative;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.servicio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+/* Línea superior con gradiente sutil */
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.servicio-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 
+    0 16px 36px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+.servicio-card:hover::before {
+  opacity: 1;
+}
+
+.servicio-icon-wrapper {
+  color: var(--cyan-primary);
+  margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.servicio-card:hover .servicio-icon-wrapper {
+  background: rgba(0, 229, 255, 0.18);
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.servicio-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.servicio-descripcion {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .servicios-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .servicio-card {
+    padding: 26px 20px;
+  }
+}

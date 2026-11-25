@@ -1,0 +1,12 @@
+.portfolio-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  position: relative;
+}
+
+main {
+  flex: 1;
+}

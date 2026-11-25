@@ -1,0 +1,183 @@
+.equipo-section {
+  padding: 80px 0 70px;
+  position: relative;
+}
+
+.equipo-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  line-height: 1.65;
+  margin-top: -1.25rem;
+  margin-bottom: 2.75rem;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.miembro-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+.miembro-card-interactive {
+  cursor: pointer;
+}
+
+.miembro-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 
+    0 18px 36px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+.miembro-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan-primary);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15) 0%, rgba(14, 23, 42, 0.9) 100%);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.miembro-avatar.has-photo {
+  background: #0a1122;
+}
+
+.miembro-foto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.miembro-card:hover .miembro-foto-img {
+  transform: scale(1.08);
+}
+
+.miembro-nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+}
+
+.miembro-rol {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--cyan-primary);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.miembro-bio {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.miembro-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.miembro-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.miembro-perfil-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cyan-primary);
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.miembro-card:hover .miembro-perfil-link,
+.miembro-perfil-link:hover {
+  background: var(--cyan-primary);
+  color: #040914;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.45);
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  color: #040914;
+  border-color: var(--cyan-primary);
+  background: var(--cyan-primary);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .miembro-card {
+    padding: 24px 18px;
+  }
+}
